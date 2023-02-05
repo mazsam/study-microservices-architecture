@@ -13,8 +13,14 @@ of loosely-coupled, fine-grained services, communicating through lightweight pro
   - Yarn
   - Mongodb
 
+  ### Users Service
+  ### Gateway
+
 ## How to install
   ### Auth Service
   - Install all dependencies `Yarn install`
   - Run auth service `yarn start`
   - try to test grpc with postman grpc with url `localhost:50051`
+
+  ### Users Service
+  ### Gateway
