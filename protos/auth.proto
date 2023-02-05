@@ -1,0 +1,69 @@
+// Copyright 2015 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.auth";
+option java_outer_classname = "AuthProto";
+option objc_class_prefix = "HLW";
+
+package auth;
+
+// The greeting service definition.
+service Auth {
+  // Sends a greeting
+  rpc Register (RegisterRequest) returns (RegisterReply) {}
+  rpc Login (LoginRequest) returns (LoginReply) {}
+  rpc Introspection (IntrospectionRequest) returns (IntrospectionReply) {}
+ }
+
+// The request message containing the user's name.
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// The response message containing the greetings
+message RegisterReply {
+  string message = 1;
+  string code = 2;
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginReply {
+  string message = 1;
+  string code = 2;
+  Login data = 3;
+}
+
+message Login {
+  string username = 2;
+  string user_id = 3;
+  string token = 4;
+}
+
+message IntrospectionRequest {
+  string token = 1; 
+}
+
+message IntrospectionReply {
+  string message = 1; 
+  string code = 2;
+  Login data = 3;
+}
