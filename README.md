@@ -16,7 +16,7 @@ of loosely-coupled, fine-grained services, communicating through lightweight pro
   ### Users Service
   ### Gateway
 
-## How to install
+## How to run
   ### Auth Service
   - Install all dependencies `Yarn install`
   - Run auth service `yarn start`
