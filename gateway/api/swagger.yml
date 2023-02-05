@@ -1,0 +1,150 @@
+---
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Demo Go Swagger API
+
+paths:
+  /health:
+    get:
+      tags:
+        - health-check
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      operationId: getHealthCheck
+      responses:
+        200:
+          description: returns a healthcheck
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/hello"
+
+  /register:
+    post:
+      tags:
+        - auth
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      operationId: registerUser
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+      responses:
+        200:
+          description: "create user"
+          schema:
+            properties:
+              message:
+                type: string
+              code:
+                type: number
+  /login:
+    post:
+      tags:
+        - auth
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      operationId: loginUser
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+      responses:
+        200:
+          description: "create user"
+          schema:
+            properties:
+              message:
+                type: string
+              code:
+                type: number
+
+  /profile:
+    post:
+      tags:
+        - user
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      operationId: createProfile
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              first_name:
+                type: string
+              last_name:
+                type: string
+              email:
+                type: string
+              phone_number:
+                type: string
+
+      responses:
+        200:
+          description: "create user"
+          schema:
+            properties:
+              message:
+                type: string
+              code:
+                type: number
+    put:
+      tags:
+        - user
+      produces:
+        - application/json
+      consumes:
+        - application/json
+      operationId: updateProfile
+      parameters:
+        - name: body
+          in: body
+          schema:
+            properties:
+              first_name:
+                type: string
+              last_name:
+                type: string
+              email:
+                type: string
+              phone_number:
+                type: string
+
+      responses:
+        200:
+          description: "create user"
+          schema:
+            properties:
+              message:
+                type: string
+              code:
+                type: number
+
+definitions:
+  hello:
+    properties:
+      name:
+        type: string
+      title:
+        type: string
