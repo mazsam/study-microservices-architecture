@@ -15,6 +15,8 @@ of loosely-coupled, fine-grained services, communicating through lightweight pro
 
   ### Users Service
   ### Gateway
+  - Go
+  - Go swagger
 
 ## How to run
   ### Auth Service
@@ -24,3 +26,6 @@ of loosely-coupled, fine-grained services, communicating through lightweight pro
 
   ### Users Service
   ### Gateway
+  - `make all`
+  - `make run-local`
+  - try to test with url `localhost:8080/health`
