@@ -15,5 +15,8 @@ build: clean
 run: 
 	./gateway-server --port=8080 --host=0.0.0.0
 
+run-local:
+	go run cmd/gateway-server/main.go --port=8080
+
 generate: validate
 	go generate ./...
